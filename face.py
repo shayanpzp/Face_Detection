@@ -47,3 +47,22 @@ def stack_images(scale,image_list):
         vertical = horizontal
 
     return vertical
+
+
+
+faceCascade= cv2.CascadeClassifier("Face_Detection\haarcascade_frontalface_default.xml")
+
+original_image = cv2.imread('Face_Detection\img\img.png')
+img = cv2.imread('Face_Detection\img\img.png')
+kernel = np.ones((5,5),np.uint8)
+
+faces = faceCascade.detectMultiScale(img,1.1,4)
+
+for (x,y,w,h) in faces:
+    img = cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,255),8)
+
+image_stack = stack_images(0.5,([original_image,img]))
+
+cv2.imshow("Face Detection", image_stack)
+
+cv2.waitKey(0)
