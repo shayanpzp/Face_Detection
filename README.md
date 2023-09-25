@@ -22,9 +22,4 @@ This Python project demonstrates face detection using OpenCV, a powerful compute
 - OpenCV library
 
 
-## Sample Output
 
-
-![Alt text](img.png)
-
-![Alt text](sample_out.png)
