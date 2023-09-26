@@ -56,7 +56,7 @@ original_image = cv2.imread('Face_Detection\img\img.png')
 img = cv2.imread('Face_Detection\img\img.png')
 kernel = np.ones((5,5),np.uint8)
 
-faces = faceCascade.detectMultiScale(img,1.1,4)
+faces = faceCascade.detectMultiScale(img,1.2,6)
 
 for (x,y,w,h) in faces:
     img = cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,255),8)
